@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<config>
+    <summary>Lsts_i Test Setting File</summary>
+    <testid></testid>
+    <!--测试需求ID：指定测试需求时请将ID号加1-->
+    <basic>
+        <arch>x86_64</arch>
+        <date>2016-04-01</date>
+        <osver>4.0</osver>
+    </basic>
+    <common>
+        <configlist>testitemurl</configlist>
+            <testitemurl>http://192.168.32.18/test/</testitemurl>
+            <!--testitemurl:"指定测试需求xml存放地址，如"http://192.168.32.18/test/" -->
+        <configlist>testtoolurl</configlist>
+            <testtoolurl>http://192.168.32.18/testtool/</testtoolurl>
+            <!--testtoolurl:"指定测试工具存放地址，如“http://192.168.32.18/testtool"-->
+        <configlist>checkfrequency</configlist>
+            <checkfrequency>60</checkfrequency>
+            <!--设置检查测试需求更新的频率，单位为s-->
+        <configlist>monitoringfrequency</configlist>
+            <monitoringfrequency>3600</monitoringfrequency>
+            <!--设置监控频率，单位为s-->
+        <configlist>monitoringitem</configlist>
+            <monitoringitem>CPU MEM</monitoringitem>
+            <!--指定监控项目，如CPU-->
+        <configlist>testdir</configlist>
+            <testdir>/var/cache</testdir>
+            <!--指定测试工具存放及安装路径-->
+    </common>
+    <result>
+        <configlist>resultdir</configlist>
+            <resultdir>default</resultdir>
+            <!--resultdir:"Specifies the directory for storing the results.default:$testtooldir/Isoft-desktop-autotest/Results-Processing/Source_data/"-->
+        <configlist>maillist</configlist>
+            <maillist>peng.li@i-soft.com.cn</maillist>
+            <!--maillist:Specifies the send test results mailing list,forexample:**@i-soft.com.cn **@gmail.com-->
+    </result>
+    <data/>
+</config>
