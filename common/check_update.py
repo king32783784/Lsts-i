@@ -1,9 +1,6 @@
-'''
-   检查ID变化
-'''
 import urllib2
 import re
-from parsing_xml import Parsing_XML
+
 class Check_update():
 
     def __init__(self,target_url):
@@ -17,7 +14,7 @@ class Check_update():
         html_Context=get_htmlContent()
         return re.findall(r"href=(.+).iso\">",html_Context)
 
-class Check_id(Check_update,Parsing_XML):
+class Check_id(Check_update):
 
     def return_checks(self):
         html_Context=self.get_htmlContent()

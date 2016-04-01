@@ -1,8 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <config>
     <summary>Lsts_i Test Setting File</summary>
-    <testid></testid>
-    <!--测试需求ID：指定测试需求时请将ID号加1-->
     <basic>
         <arch>x86_64</arch>
         <date>2016-04-01</date>
@@ -10,8 +8,8 @@
     </basic>
     <common>
         <configlist>testitemurl</configlist>
-            <testitemurl>http://192.168.32.18/test/</testitemurl>
-            <!--testitemurl:"指定测试需求xml存放地址，如"http://192.168.32.18/test/" -->
+            <testitemurl>http://192.168.32.18/Lsts-i/stability.xml</testitemurl>
+            <!--testitemurl:"指定测试需求xml地址，如"http://192.168.32.18/test/" -->
         <configlist>testtoolurl</configlist>
             <testtoolurl>http://192.168.32.18/testtool/</testtoolurl>
             <!--testtoolurl:"指定测试工具存放地址，如“http://192.168.32.18/testtool"-->
