@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test ostype="server">
+  <list>
+    <summary>This is a list system update test requirements.</summary>
+    <osversion>4.0</osversion>
+    <arch>x86_64</arch>
+    <date>2016-02-17</date>
+    <Supporttype>info performance stability function</Supporttype>
+    <!--Supporttype:支持测试类型-->
+    <Perfsupportlists>Perf_kernel Perf_cpu Perf_thread Perf_mem Perf_io Perf_net Perf_os Perf_compression Perf_encoding Perf_graphics Perf_compiler Perf_browser</Perfsupportlists>
+    <!--Perfsupportlists:支持性能测试的项目列表-->
+
+    <Selecttype>performance</Selecttype>
+     <!--Selettype:指定测试类型-->
+     <!--performance:指定对应测试项目-->
+     <performance>Perf_cpu</performance>
+      <performance>Perf_mem</performance>
+    <Selecttype>stability</Selecttype>
+      <stability>Stb_cpu</stability>
+  </list>
+</test>
