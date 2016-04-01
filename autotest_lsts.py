@@ -10,47 +10,37 @@ import threading
 from common.parsing_xml import Parsing_XML
 from common.initdaemon import Daemon
 from common.check_update import Check_id
+from common.downloadfile import Download_File
 
 ##解析配置文件，"test_setup_info"是个字典，其中'xml_list'对应配置列表；'xml_dict'是一个以配置项为键，其对应设置内容为值的字典" ##
 test_setup=Parsing_XML('setup.xml','configlist')
+global test_setup_info
 test_setup_info=test_setup.specific_elements()
 print test_setup_info
 
-'''
-class Time_check_update(threading.Thread,Check_id):
-
-    def __init__(self,target_url):  
-        threading.Thread.__init__(self) 
-        self.url=target_url
-
-    def run(self):
-        print self.url
-        now=datetime.datetime.now()
-        get_id=Check_id(self.url)
-        idnum=get_id.return_checks()
-        f=open('/home/test.log','w+')
-        f.write("says hello world at %s"%now)
-        f.write("%s"%idnum)
-        time.sleep(3)
-'''
-class Check_id_update(Daemon,Check_id):
+class Check_id_update(Daemon,Check_id,Download_File):
 
     def __init__(self,xmlurl,checkfrequency):
         Daemon.__init__(self)
-        self.xmlurl=xmlurl
-        self.checkfrequency=checkfrequency
+        self.xmlurl=xmlurl[0]
+        self.checkfrequency=checkfrequency[0]
 
     def _run(self):
+        homedir = os.popen('pwd').read()
+        local_xml_file=os.path.join(homedir,'/stability.xml')
+        xml_url=os.path.join(self.xmlurl,'stability.xml')
         init_id=0
         while True:
-            check_id=Check_id(self.xmlurl[0])
+            print self.xmlurl
+            check_id=Check_id(xml_url)
             test_id=check_id.return_checks()
             if test_id > init_id:
                 time.sleep(10)
-                print "hello"
+                downxml=Download_File(self.xmlurl,local_xml_file)
+                downxml.downloading()         
                 init_id=test_id
             else:
-                time.sleep(int(self.checkfrequency[0]))
+                time.sleep(int(self.checkfrequency))
 
 
 if __name__ == "__main__":

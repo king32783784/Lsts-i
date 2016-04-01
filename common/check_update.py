@@ -7,8 +7,12 @@ class Check_update():
         self.url=target_url
     
     def get_htmlContent(self):
-        html_Context=urllib2.urlopen(self.url).read()
-        return unicode(html_Context,'utf-8')
+        try:
+            html_Context=urllib2.urlopen(self.url).read()
+            return unicode(html_Context,'utf-8')
+        except IOError:
+            print 'Failed to open xml file, please check it'
+            exit(1)
 
     def return_checks(self):
         html_Context=get_htmlContent()
