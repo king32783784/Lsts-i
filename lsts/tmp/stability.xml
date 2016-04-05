@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--[Lsts-i stability test suite ]-->
+<Stbtestsuite>
+  <testid>5</testid>
+  <!--测试需求ID：指定测试需求时请将ID号加1-->
+  <SuiteInformation>
+    <Title>Stability test Suite</Title>
+    <Version>1.0.0</Version>
+    <TestType>Stability</TestType>
+    <Description>This test suite for Linux systems stability evaluation.</Description>
+    <Maintainer>isoft_lp</Maintainer>
+  </SuiteInformation>
+  <Execute>
+    <stbtest>Stb_ltp</stbtest>
+    <Stb_ltp>'72'</Stb_ltp>
+    <Description>ltp stress test</Description>
+  </Execute>
+  <Execute>
+    <stbtest>Stb_cpu</stbtest>
+    <Stb_cpu>'12''70%'</Stb_cpu>
+    <Description>stressapptest</Description>
+  </Execute>
+</Stbtestsuite>

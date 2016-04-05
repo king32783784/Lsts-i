@@ -17,5 +17,5 @@ class Download_File():
             print '\tError download the file:', self.url
             exit(1)
 
-# test=Download_File('http://192.168.32.18/Lsts-i/','stability.xml')
-# test.downloading()
+#test=Download_File('http://192.168.32.18/Lsts-i/setup.xml','setup.xml')
+#test.downloading()

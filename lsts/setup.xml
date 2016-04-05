@@ -8,7 +8,7 @@
     </basic>
     <common>
         <configlist>testitemurl</configlist>
-            <testitemurl>http://192.168.32.18/Lsts-i/</testitemurl>
+            <testitemurl>http://192.168.32.18/Lsts-i/stability.xml</testitemurl>
             <!--testitemurl:"指定测试需求xml地址，如"http://192.168.32.18/test/" -->
         <configlist>testtoolurl</configlist>
             <testtoolurl>http://192.168.32.18/testtool/</testtoolurl>
